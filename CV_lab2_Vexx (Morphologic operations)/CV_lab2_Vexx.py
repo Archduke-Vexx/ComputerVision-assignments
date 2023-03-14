@@ -20,6 +20,7 @@ cv.imshow("Binary image", imgBinary)
 kernel = cv.getStructuringElement(cv.MORPH_ELLIPSE, ksize=(5, 5))
 mask = cv.morphologyEx(imgBinary, cv.MORPH_OPEN, kernel)
 cv.imshow("image with opening", mask)
+cv.imwrite('mask.png', mask)
 
 #For the reason that mask has only 1 channel and BGR(colored) image has 3 channels, in order to use them in same operation
 #we have to make mask with 3 channels. Code is from stackoverflow.
@@ -29,6 +30,7 @@ mask = np.repeat(mask, 3, axis=2) # give the mask the same shape as your image
 #To fetch copper coin from colored image, we use mask for that specific coin in same position and apply it on colored image with AND operation.
 result = cv.bitwise_and(img, mask)
 cv.imshow("result", result)
+cv.imwrite('Fetched cooper coin.png', result)
 
 cv.waitKey(0)
 cv.destroyAllWindows()
