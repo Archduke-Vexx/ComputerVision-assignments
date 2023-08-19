@@ -1,7 +1,7 @@
 import cv2 as cv
 import numpy as np
 from matplotlib import pyplot as plt
-#Student: Veljko Turudic 18022, github:Archduke-Vexx
+github:Archduke-Vexx
 
 #Reading image.
 img = cv.imread('coins.png')
